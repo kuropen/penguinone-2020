@@ -52,7 +52,21 @@ pre {
     white-space: pre-wrap;
 }
 
+.blogArticle h2 {
+    @apply text-xl;
+    @apply font-bold;
+}
+
+.blogArticle h3 {
+    @apply text-lg;
+    @apply font-bold;
+}
+
 @media (min-width: 768px) {
+    .blogArticle img {
+        max-width: 480px;
+        max-height: 320px;
+    }
     pre {
         white-space: pre;
         overflow-x: auto;

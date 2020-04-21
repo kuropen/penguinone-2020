@@ -7,11 +7,13 @@ export default ({accounts, className, elementClassName, socialPolicyLink}) => {
         const {url} = account_link;
         const linkText = (account_type === 'Facebook') ? account_type : `${account_type} (${account_name})` ;
         return (
-            <li className={elementClassName}><a href={url} target="_blank" rel="noopener noreferrer">{linkText}</a></li>
+            <li key={account_name} className={elementClassName}>
+                <a href={url} target="_blank" rel="noopener noreferrer">{linkText}</a>
+            </li>
         );
     });
     if (socialPolicyLink) {
-        accountLinks.unshift((<li className={elementClassName}><Link to="/social">Social Network Policy</Link></li>));
+        accountLinks.unshift((<li key="SNSPolicy" className={elementClassName}><Link to="/social">Social Network Policy</Link></li>));
     }
     return (
         <ul className={className}>

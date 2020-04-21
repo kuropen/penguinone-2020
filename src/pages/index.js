@@ -28,7 +28,7 @@ export default ({data}) => {
                         <FontAwesomeIcon icon={faPencilRuler} /> Works
                     </h2>
                     <ul className="border-l-8 border-purple-200 pl-2 TopPageMenu">
-                        <li className="py-2">Blog</li>
+                        <li className="py-2"><Link to="/blog">Blog</Link></li>
                         <li className="py-2"><Link to="/tech">Tech Articles</Link></li>
                         <li className="py-2"><a href="https://github.com/kuropen" target="_blank" rel="noopener noreferrer">Codes on GitHub</a></li>
                         <li className="py-2">Note: Blog and Tech Articles are in Japanese</li>

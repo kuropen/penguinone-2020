@@ -6,7 +6,7 @@ export default ({articles, className}) => {
         const absolutePath = article.fileAbsolutePath;
         const pathMatch = absolutePath.match(/md-pages\/(.*)\.md$/);
         if (pathMatch == null) {
-            return;
+            return null;
         }
         const pagePath = pathMatch[1];
         const category = pagePath.split('/').shift();
@@ -14,7 +14,7 @@ export default ({articles, className}) => {
             return null;
         }
         return (
-            <li><Link to={`/${pagePath}`}>{article.frontmatter.title}</Link></li>
+            <li key={article.id}><Link to={`/${pagePath}`}>{article.frontmatter.title}</Link></li>
         );
     });
     return (

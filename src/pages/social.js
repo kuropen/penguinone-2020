@@ -12,7 +12,7 @@ export default ({data}) => {
     const {policy} = doc.node;
     const socialAccounts = data.prismic.allSocial_accountss.edges;
     return (
-        <Layout>
+        <Layout pageTitle="Social Network Policy">
             <h2 className="p-4 bg-indigo-200 text-black border-indigo-200 rounded border text-xl">SNSポリシー</h2>
             <div className="p-4 border-indigo-200 rounded border">
                 {RichText.render(policy)}

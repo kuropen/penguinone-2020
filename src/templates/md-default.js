@@ -8,7 +8,7 @@ export default ({data}) => {
         return null;
     }
     return (
-        <Layout>
+        <Layout pageTitle={doc.frontmatter.title}>
             <h2 className="p-4 bg-gray-100 text-black border-gray-100 rounded border text-xl">{doc.frontmatter.title}</h2>
             <div
                 className="mb-4 p-4 border-gray-100 rounded border"
