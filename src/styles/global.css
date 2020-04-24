@@ -14,6 +14,11 @@ ul:not(.TopPageMenu) {
     @apply ml-6;
 }
 
+svg {
+    @apply w-6;
+    @apply inline;
+}
+
 address {
     font-style: normal;
 }
