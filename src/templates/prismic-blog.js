@@ -18,8 +18,10 @@ export default ({data}) => {
     "title": titleText,
     "type": "article",
     "url": `${webRootUrl}/blog/${_meta.id}`,
-    "image": cover_image.url,
   };
+  if (cover_image) {
+    ogpInfo.image = cover_image.url;
+  }
 
   return (
       <Layout pageTitle={titleText} ogpInfo={ogpInfo}>
