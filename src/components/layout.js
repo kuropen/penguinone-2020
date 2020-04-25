@@ -43,7 +43,7 @@ export default ({ children, hideHomeBtn, pageTitle }) => {
             </div>
             <div className="mx-2 md:mx-0">
                 <address>
-                    <span>Copyright (C) Kuropen.</span>&nbsp;
+                    <span>Copyright (C) Kuropen.</span><wbr />
                     <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">
                         Licensed under:&nbsp;
                         <span className="sr-only">Creative Commons Attribution-NonCommercial 4.0 License.</span>

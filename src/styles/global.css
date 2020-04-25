@@ -23,6 +23,10 @@ address {
     font-style: normal;
 }
 
+address svg {
+    @apply w-4;
+}
+
 address span {
     white-space: nowrap;
 }
