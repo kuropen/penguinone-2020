@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import TechArticleList from "../components/tech/techArticleList";
 import {graphql, Link} from "gatsby";
+import getWebRootUrl from "../utilities/getWebRootUrl";
 
 export default ({data}) => {
   const articles = data.allMarkdownRemark.nodes;
@@ -9,8 +10,16 @@ export default ({data}) => {
   if (!doc) {
       return null;
   }
+  const pathMatch = doc.fileAbsolutePath.match(/md-pages\/(.*)\.md$/);
+  const pagePath = pathMatch[1];
+  const webRootUrl = getWebRootUrl();
+  const ogpInfo = {
+    "title": doc.frontmatter.title,
+    "type": "article",
+    "url": `${webRootUrl}/${pagePath}`,
+  };
   return (
-      <Layout pageTitle={doc.frontmatter.title}>
+      <Layout pageTitle={doc.frontmatter.title} ogpInfo={ogpInfo}>
           <div className="md:flex md:flex-row mb-4">
             <div className="hidden md:block md:w-1/4">
               <h2 className="p-4 bg-purple-200 text-black border-purple-200 rounded border text-xl">Tech Articles</h2>
@@ -21,7 +30,7 @@ export default ({data}) => {
             <div className="md:w-3/4">
               <h3 className="p-4 bg-purple-200 text-black border-purple-200 rounded border text-xl">{doc.frontmatter.title}</h3>
               <div
-                className="p-4 border-purple-200 rounded border"
+                className="p-4 border-purple-200 rounded border blogArticle"
                 dangerouslySetInnerHTML={{__html: doc.html}}>
               </div>
             </div>
@@ -41,6 +50,7 @@ export const query = graphql`
       frontmatter {
         title
       }
+      fileAbsolutePath
     }
     allMarkdownRemark {
       nodes {

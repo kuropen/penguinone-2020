@@ -61,6 +61,10 @@ pre {
     white-space: pre-wrap;
 }
 
+td {
+    word-break: break-all;
+}
+
 .blogArticle h2 {
     @apply text-xl;
     @apply font-bold;

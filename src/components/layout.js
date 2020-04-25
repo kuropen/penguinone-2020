@@ -5,9 +5,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import { faCreativeCommons, faCreativeCommonsNc, faCreativeCommonsBy } from '@fortawesome/free-brands-svg-icons';
 
-export default ({ children, hideHomeBtn, pageTitle }) => {
+export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => {
     const {site} = useStaticQuery(query);
-    const {title, image} = site.siteMetadata;
+    const {title, image, url} = site.siteMetadata;
+    const faviconFullPath = `${url}${image}`;
+    const defaultOgpInfo = {
+        "title": title,
+        "type": "website",
+        "url": url,
+        "image": faviconFullPath,
+        "site_name": title,
+    };
+    ogpInfo = ogpInfo ? Object.assign(defaultOgpInfo, ogpInfo) : defaultOgpInfo;
+    const ogpTags = Object.keys(ogpInfo).map((key) => (
+        <meta property={`og:${key}`} content={ogpInfo[key]} key={`og_${key}`} />
+    ));
+
     // This is special version, normally the icon is faHome
     let homeBtn = (
         <Link to="/" className="bg-white text-black p-2 border-white border rounded" title="Stay home, stay lives!">
@@ -28,7 +41,10 @@ export default ({ children, hideHomeBtn, pageTitle }) => {
     }
     return (
         <div className="container mx-auto">
-            <Helmet title={fullTitle} />
+            <Helmet title={fullTitle}>
+                <link rel="shortcut icon" type="image/png" href={image} />
+                {ogpTags}
+            </Helmet>
             <header className="flex flex-row items-center py-4 mb-4 text-white">
                 <div className="mx-2">
                     <img src={image} className="h-12 w-12 rounded-full" alt="" />
@@ -63,6 +79,7 @@ const query = graphql`
             siteMetadata {
                 title
                 image
+                url
             }
         }
     }
