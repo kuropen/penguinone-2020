@@ -19,8 +19,8 @@ export default ({data}) => {
                         <FontAwesomeIcon icon={faInfoCircle} /> About
                     </h2>
                     <ul className="border-l-8 border-teal-200 pl-2 TopPageMenu">
-                        <li className="py-2">About this website</li>
-                        <li className="py-2">Profile</li>
+                        <li className="py-2 text-gray-600">About this website</li>
+                        <li className="py-2"><Link to="/profile">Profile</Link></li>
                     </ul>
                 </section>
                 <section className="mb-8">
