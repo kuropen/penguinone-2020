@@ -10,7 +10,7 @@ export default ({data}) => {
     }
     const {text} = doc.node;
     return (
-        <Layout pageTitle="Social Network Policy">
+        <Layout pageTitle="Profile">
             <h2 className="p-4 bg-teal-200 text-black border-teal-200 rounded border text-xl">Profile</h2>
             <div className="mb-4 p-4 border-teal-200 rounded border">
             {RichText.render(text)}
