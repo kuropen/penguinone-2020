@@ -9,11 +9,11 @@ export default ({data}) => {
     const socialAccounts = data.prismic.allSocial_accountss.edges;
     return (
         <Layout hideHomeBtn={true}>
-          <p className="text-yellow-400 text-center md:w-2/3 mx-2 md:mx-auto font-serif text-xl mb-4">
-            Stay at home as possible and keep distance. Keep hands clean.
-            Imagine the future that we would meet on-site again. We can get over the pandemic!
+          <p className="text-yellow-400 text-center md:w-2/3 mx-2 md:mx-auto font-serif text-xl mb-4 social-distance">
+            STAY HOME! KEEP DISTANCE!<br />
+            And <a href="https://akabe.co/" target="_blank" rel="noopener noreferrer">Gain the Power from Akabeko!</a>
           </p>
-            <div className="md:grid md:grid-cols-3 md:gap-24 mx-2">
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-24 mx-2">
                 <section className="mb-8">
                     <h2 className="text-2xl border-b-8 border-teal-200 bg-teal-200 text-gray-900 pl-1">
                         <FontAwesomeIcon icon={faInfoCircle} /> About
@@ -30,6 +30,7 @@ export default ({data}) => {
                     <ul className="border-l-8 border-purple-200 pl-2 TopPageMenu">
                         <li className="py-2"><Link to="/blog">Blog</Link></li>
                         <li className="py-2"><Link to="/tech">Tech Articles</Link></li>
+                        <li className="py-2"><a href="https://akabe.co/" target="_blank" rel="noopener noreferrer">Gain the Power from Akabeko</a></li>
                         <li className="py-2"><a href="https://github.com/kuropen" target="_blank" rel="noopener noreferrer">Codes on GitHub</a></li>
                         <li className="py-2">Note: Blog and Tech Articles are in Japanese</li>
                     </ul>

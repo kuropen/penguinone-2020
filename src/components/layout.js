@@ -23,14 +23,14 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => {
 
     // This is special version, normally the icon is faHome
     let homeBtn = (
-        <Link to="/" className="bg-white text-black p-2 border-white border rounded" title="Stay home, stay lives!">
+        <Link to="/" className="bg-white text-black p-2 border-white border rounded" title="Stay home, Save lives!">
             <FontAwesomeIcon icon={faHouseUser} />
         </Link>
     );
     if (hideHomeBtn) {
         // This is special version, normally hidden using React.Fragment
         homeBtn = (
-            <div title="Stay home, stay lives!" className="p-2 border-white border rounded">
+            <div title="Stay home, Save lives!" className="p-2 border-white border rounded">
                 <FontAwesomeIcon icon={faHouseUser} />
             </div>
         );

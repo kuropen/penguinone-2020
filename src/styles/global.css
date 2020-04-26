@@ -75,6 +75,10 @@ td {
     @apply font-bold;
 }
 
+.social-distance {
+    word-spacing: 1.8rem;
+}
+
 @media (min-width: 768px) {
     .blogArticle img {
         max-width: 480px;
