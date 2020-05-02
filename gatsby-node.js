@@ -9,7 +9,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = async ({graphql, actions}) => {
-    const {createPage} = actions;
+    const {createPage, createRedirect} = actions;
+    createRedirect({ fromPath: '/about', toPath: '/about/en' });
+
     const result = await graphql(`
       query CreatePagesQuery {
         allMarkdownRemark {
@@ -32,6 +34,9 @@ exports.createPages = async ({graphql, actions}) => {
         let template = './src/templates/md-default.js';
         if (category === 'tech') {
             template = './src/templates/md-tech.js';
+        }
+        if (category === 'about') {
+          template = './src/templates/md-about.js';
         }
         createPage({
             path: `/${pagePath}`,

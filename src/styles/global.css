@@ -9,9 +9,17 @@ body {
     @apply text-gray-200;
 }
 
-ul:not(.TopPageMenu) {
+ul:not(.TopPageMenu):not(.aboutLanguageList) {
     @apply list-disc;
     @apply ml-6;
+}
+
+ul.aboutLanguageList li {
+    display: inline-block;
+}
+
+ul.aboutLanguageList li:not(:last-child) {
+    @apply mr-4;
 }
 
 svg {
