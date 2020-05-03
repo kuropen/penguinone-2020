@@ -24,6 +24,7 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => {
     // This is special version, normally the icon is faHome
     let homeBtn = (
         <Link to="/" className="bg-white text-black p-2 border-white border rounded" title="Stay home, Save lives!">
+            <span className="sr-only">Go to Top Page / トップページへ戻る</span>
             <FontAwesomeIcon icon={faHouseUser} />
         </Link>
     );
@@ -59,7 +60,7 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => {
             </div>
             <div className="mx-2 md:mx-0">
                 <address>
-                    <span>Copyright (C) Kuropen.</span><wbr />
+                    <span>Copyright (C) Kuropen.</span>&nbsp;<wbr />
                     <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">
                         Licensed under:&nbsp;
                         <span className="sr-only">Creative Commons Attribution-NonCommercial 4.0 License.</span>
