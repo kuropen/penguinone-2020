@@ -17,7 +17,7 @@ export default ({data}) => {
   const ogpInfo = {
     "title": titleText,
     "type": "article",
-    "url": `${webRootUrl}/blog/${_meta.id}`,
+    "url": `${webRootUrl}/blog/${_meta.uid}`,
   };
   if (cover_image) {
     ogpInfo.image = cover_image.url;
