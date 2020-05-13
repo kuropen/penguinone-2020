@@ -7,7 +7,7 @@ export default ({className}) => {
     const articles = prismic.allBlogs.edges;
     const listElements = articles.map((article) => {
         const {title, posting_date, _meta} = article.node;
-        const id = _meta.id;
+        const id = _meta.uid;
         return (
             <li key={id}><Link to={`/blog/${id}`}>{RichText.asText(title)} ({posting_date})</Link></li>
         );

@@ -16,7 +16,7 @@ module.exports = {
         pages: [ // (optional, builds pages dynamically)
           { 
             type: 'Blog',         // TypeName from prismic
-            match: '/blog/:id',   // Pages will be generated under this pattern
+            match: '/blog/:uid',   // Pages will be generated under this pattern
             path: '/blog/new',    // Placeholder page for unpublished documents
             component: require.resolve('./src/templates/prismic-blog.js'),
           }

@@ -20,6 +20,18 @@ exports.createPages = async ({graphql, actions}) => {
             fileAbsolutePath
           }
         }
+        prismic {
+          allBlogs {
+            edges {
+              node {
+                _meta {
+                  uid
+                  id
+                }
+              }
+            }
+          }
+        }
       }
     `);
     result.data.allMarkdownRemark.nodes.forEach((node) => {
@@ -45,5 +57,11 @@ exports.createPages = async ({graphql, actions}) => {
                 id: node.id,
             }
         });
+    });
+    result.data.prismic.allBlogs.edges.forEach((edge) => {
+      const {_meta} = edge.node;
+      const {id, uid} = _meta;
+      console.log(`Generating Blog Redirect: /blog/${id} => /blog/${uid}`);
+      createRedirect({ fromPath: `/blog/${id}`, toPath: `/blog/${uid}` });
     });
 };
