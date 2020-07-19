@@ -2,50 +2,64 @@ import React from "react";
 import Layout from "../components/layout";
 import SNSListBox from "../components/top/snsListBox";
 import {graphql, Link} from "gatsby";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle, faPencilRuler, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+import BekoImage from "../images/beko.png";
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faInfoCircle, faPencilRuler, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+// import AboutLanguageList from "../components/about/aboutLanguageList"
 
 export default ({data}) => {
     const socialAccounts = data.prismic.allSocial_accountss.edges;
     return (
         <Layout hideHomeBtn={true}>
-          <p className="text-yellow-400 text-center md:w-2/3 mx-2 md:mx-auto font-serif text-xl mb-4 social-distance">
-            STAY HOME! KEEP DISTANCE!<br />
-            And <a href="https://akabe.co/" target="_blank" rel="noopener noreferrer">Gain the Power from Akabeko!</a>
+          <p className="text-yellow-400 text-center md:w-2/3 mx-2 md:mx-auto font-serif text-xl mb-4">
+            感染防止対策は自己責任ではない。守られなければならない人がいる。<br />
+            全ての人を守るために、<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_newlifestyle.html" target="_blank" rel="noopener noreferrer">新しい生活様式</a>。
           </p>
-            <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-24 mx-2">
-                <section className="mb-8">
-                    <h2 className="text-2xl border-b-8 border-teal-200 bg-teal-200 text-gray-900 pl-1">
-                        <FontAwesomeIcon icon={faInfoCircle} /> About
-                    </h2>
-                    <ul className="border-l-8 border-teal-200 pl-2 TopPageMenu">
-                        <li className="py-2"><Link to="/about/en">About this website</Link></li>
-                        <li className="py-2"><Link to="/profile">Profile</Link></li>
-                    </ul>
-                </section>
-                <section className="mb-8">
-                    <h2 className="text-2xl border-b-8 border-purple-200 bg-purple-200 text-gray-900 pl-1">
-                        <FontAwesomeIcon icon={faPencilRuler} /> Works
-                    </h2>
-                    <ul className="border-l-8 border-purple-200 pl-2 TopPageMenu">
-                        <li className="py-2"><Link to="/blog">Blog</Link></li>
-                        <li className="py-2"><Link to="/tech">Tech Articles</Link></li>
-                        <li className="py-2"><a href="https://akabe.co/" target="_blank" rel="noopener noreferrer">Gain the Power from Akabeko</a></li>
-                        <li className="py-2"><a href="https://github.com/kuropen" target="_blank" rel="noopener noreferrer">Codes on GitHub</a></li>
-                        <li className="py-2">Note: Blog and Tech Articles are in Japanese</li>
-                    </ul>
-                </section>
-                <section className="mb-8">
-                    <h2 className="text-2xl border-b-8 border-indigo-200 bg-indigo-200 text-gray-900 pl-1">
-                        <FontAwesomeIcon icon={faCommentAlt} /> Social
-                    </h2>
-                    <SNSListBox
-                      className="border-l-8 border-indigo-200 pl-2 TopPageMenu"
-                      elementClassName="py-2"
-                      socialPolicyLink={true}
-                      accounts={socialAccounts} />
-                </section>
+
+          <div className="md:grid md:grid-cols-2 mb-5">
+            <div
+              className="p-4 border-indigo-800 rounded border md:flex md:flex-row">
+              <div className="md:w-1/3">
+                <div className="flex flex-row md:flex-none md:block items-center">
+                  <div><img src="/siteImages/penguin.png" className="h-12 rounded-full" alt="" /></div>
+                  <div className="text-xl ml-2 md:ml-0">Kuropen</div>
+                </div>
+              </div>
+              <div className="md:w-2/3">
+                <ul className="TopPageMenu text-lg">
+                  <li><Link to="/profile">Profile</Link></li>
+                  <li><Link to="/blog">Blog</Link></li>
+                  <li><Link to="/tech">Tech Articles</Link></li>
+                </ul>
+                <SNSListBox
+                  className="TopPageMenu text-lg"
+                  elementClassName=""
+                  socialPolicyLink={true}
+                  accounts={socialAccounts} />
+              </div>
             </div>
+            <div
+              className="p-4 border-indigo-800 rounded border md:flex md:flex-row">
+              <div className="md:w-1/3">
+                <div className="flex flex-row md:flex-none md:block items-center">
+                  <div><img src={BekoImage} className="h-12 rounded-full" alt="" /></div>
+                  <div className="text-xl ml-2 md:ml-0">Aka Beko</div>
+                </div>
+              </div>
+              <div className="md:w-2/3">
+                <ul className="TopPageMenu text-lg">
+                  <li>
+                    アマビエもいいけど赤べこも。福島県会津地方に伝わる神聖な赤い牛を模した張り子人形・「赤べこ」は、
+                    天然痘の感染から子供を守ったという言い伝えがあるなど、感染防止のお守りとしても知られています。
+                  </li>
+                  <li><a href="https://akabe.co/" target="_blank" rel="noopener noreferrer">
+                    赤べこからパワーを
+                  </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </Layout>
     );
 };
