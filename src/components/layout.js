@@ -46,7 +46,7 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => {
                 {ogpTags}
             </Helmet>
             <header className="flex flex-row items-center py-4 mb-4 text-white">
-                <h1 className="text-xl font-bold flex-grow">{title}</h1>
+                <h1 className="text-xl font-bold flex-grow ml-2">{title}</h1>
                 <div className="mx-2 text-2xl justify-end">
                     {homeBtn}
                 </div>
