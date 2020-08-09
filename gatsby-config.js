@@ -31,6 +31,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-netlify',
   ],
   siteMetadata: {

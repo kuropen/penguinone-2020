@@ -1,25 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 body {
-    @apply bg-black;
-    @apply text-gray-200;
+    font-family: 'Segoe UI', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', 'MS PGothic', sans-serif;
+}
+.font-orbitron {
+    @apply font-bold; /* because the included Orbitron is bold */
+    font-family: 'Orbitron', sans-serif;
 }
 
-ul:not(.TopPageMenu):not(.aboutLanguageList) {
+ul {
     @apply list-disc;
     @apply ml-6;
-}
-
-ul.aboutLanguageList li {
-    display: inline-block;
-}
-
-ul.aboutLanguageList li:not(:last-child) {
-    @apply mr-4;
 }
 
 svg {
@@ -96,3 +91,12 @@ td {
         overflow-x: auto;
     }
 }
+
+.kp-gradientBorder1 {
+    border-top: 6px solid;
+    border-image: linear-gradient(to right, #000000, #119988 5%, #119988 95%, #000000);
+    border-image-slice: 1;
+}
+
+
+
