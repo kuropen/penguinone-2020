@@ -37,7 +37,7 @@ module.exports = {
   siteMetadata: {
     title: "Penguinone",
     titleTemplate: "%s - Penguinone",
-    url: "https://kuropen.org",
+    url: "https://penguinone.kuropen.org",
     image: "/siteImages/penguin.png",
     twitterUserName: "kuropen_aizu",
     fbUserName: "yuda.hirochika",
