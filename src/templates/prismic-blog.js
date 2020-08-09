@@ -3,7 +3,6 @@ import Layout from "../components/layout";
 import BlogArticleList from "../components/blog/blogArticleList";
 import {graphql, Link} from "gatsby";
 import { RichText } from 'prismic-reactjs';
-import getWebRootUrl from "../utilities/getWebRootUrl";
 
 export default ({data}) => {
   const articles = data.prismic.allBlogs.edges;
@@ -13,7 +12,7 @@ export default ({data}) => {
   const {title, posting_date, text, cover_image, _meta} = articles.pop().node;
   const titleText = RichText.asText(title);
 
-  const webRootUrl = getWebRootUrl();
+  const webRootUrl = data.site.siteMetadata.url;
   const ogpInfo = {
     "title": titleText,
     "type": "article",
@@ -50,6 +49,11 @@ export default ({data}) => {
 
 export const query = graphql`
   query MakePrismicBlogPageQuery ($id: String!) {
+    site {
+      siteMetadata {
+        url
+      }
+    }
     prismic {
       allBlogs(id: $id) {
         edges {

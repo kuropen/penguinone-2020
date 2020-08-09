@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../components/layout";
 import TechArticleList from "../components/tech/techArticleList";
 import {graphql, Link} from "gatsby";
-import getWebRootUrl from "../utilities/getWebRootUrl";
 
 export default ({data}) => {
   const articles = data.allMarkdownRemark.nodes;
@@ -12,7 +11,7 @@ export default ({data}) => {
   }
   const pathMatch = doc.fileAbsolutePath.match(/md-pages\/(.*)\.md$/);
   const pagePath = pathMatch[1];
-  const webRootUrl = getWebRootUrl();
+  const webRootUrl = data.site.siteMetadata.url;
   const ogpInfo = {
     "title": doc.frontmatter.title,
     "type": "article",
@@ -44,6 +43,11 @@ export default ({data}) => {
 
 export const query = graphql`
   query MakeMDTechPageQuery ($id: String!) {
+    site {
+      siteMetadata {
+        url
+      }
+    }
     markdownRemark(id: {eq: $id}) {
       id
       html
