@@ -62,7 +62,7 @@ export default ({data}) => {
               <h3 className="text-lg text-bold font-orbitron">Where is {currentMapParameter.label}?</h3>
               <p>{currentMapParameter.description}</p>
               <iframe width="100%" height="300" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"
-                      src={currentMapParameter.embedMapUrl} />
+                      src={currentMapParameter.embedMapUrl} title="OpenStreetMap Box" />
               <small><a href={currentMapParameter.largeMapUrl}>大きな地図を表示</a></small>
             </div>
             <dl>
