@@ -2,12 +2,17 @@ import React from "react";
 import {Link, graphql, useStaticQuery} from "gatsby";
 import { RichText } from 'prismic-reactjs';
 
-export default ({className}) => {
+export default ({className, max = 0}) => {
     const {prismic} = useStaticQuery(query);
     const articles = prismic.allBlogs.edges;
+    let shownCount = 0;
     const listElements = articles.map((article) => {
         const {title, posting_date, _meta} = article.node;
         const id = _meta.uid;
+        shownCount++;
+        if (max > 0 && shownCount > max) {
+            return null;
+        }
         return (
             <li key={id}><Link to={`/blog/${id}`}>{RichText.asText(title)} ({posting_date})</Link></li>
         );

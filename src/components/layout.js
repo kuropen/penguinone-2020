@@ -1,8 +1,9 @@
 import React from "react";
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet";
 import {useStaticQuery, graphql, Link} from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
+import { faHouseUser, faHammer } from '@fortawesome/free-solid-svg-icons';
+import Iconbox from "../components/iconbox";
 
 export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => {
     const {site} = useStaticQuery(query);
@@ -45,19 +46,26 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => {
                 <link rel="shortcut icon" type="image/png" href={image} />
                 {ogpTags}
             </Helmet>
-            <header className="flex flex-row items-center py-4 mb-4 text-white">
-                <h1 className="text-xl font-bold flex-grow ml-2">{title}</h1>
+            <header className="bg-black text-gray-200 flex flex-row items-center py-4 kp-gradientBorder1">
+                <h1 className="font-orbitron text-2xl flex-grow ml-2">{title}</h1>
                 <div className="mx-2 text-2xl justify-end">
                     {homeBtn}
                 </div>
             </header>
-            <div>
-                {children}
-            </div>
-            <div className="mx-2 md:mx-0">
-                <address>
+            <div className="divide-y divide-gray-400 p-4 border border-black rounded-b-lg">
+                <div>
+                  <Iconbox className="border-red-500" icon={<FontAwesomeIcon icon={faHammer} />}>
+                    <h2 className="text-xl text-bold font-orbitron">Under Construction</h2>
+                    <p>現在<strong>ページレイアウトの大幅見直し</strong>を行っており、<strong>途中経過</strong>が公開されています。<br/>
+                      レイアウトが崩れている箇所が一部ある場合がありますが、ご了承ください。</p>
+                  </Iconbox>
+                  {children}
+                </div>
+                <div className="mx-2 pt-2">
+                  <address>
                     <span>Copyright (C) Kuropen.</span>
-                </address>
+                  </address>
+                </div>
             </div>
         </div>
     );
