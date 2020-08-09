@@ -1,14 +1,15 @@
-import {useStaticQuery, graphql} from "gatsby";
+import React from "react";
+import {StaticQuery, graphql} from "gatsby";
 
 /**
  * ドキュメントルートのURLを取得する.
  * @return {string}
  */
-export default () => {
-    const {site} = useStaticQuery(query);
+export default () => (<StaticQuery query={query} render={data => {
+    const {site} = data;
     const {url} = site.siteMetadata;
     return url;
-};
+}} />);
 
 const query = graphql`
     query WebRootUrlQuery {
