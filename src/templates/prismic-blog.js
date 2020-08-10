@@ -3,6 +3,11 @@ import Layout from "../components/layout";
 import BlogArticleList from "../components/blog/blogArticleList";
 import {graphql, Link} from "gatsby";
 import { RichText } from 'prismic-reactjs';
+import Box from "../components/box";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import Iconbox from "../components/iconbox";
+import CreativeCommons from "../components/cc/creativeCommons";
 
 export default ({data}) => {
   const articles = data.prismic.allBlogs.edges;
@@ -24,25 +29,26 @@ export default ({data}) => {
 
   return (
       <Layout pageTitle={titleText} ogpInfo={ogpInfo}>
-          <div className="md:flex md:flex-row mb-4">
-            <div className="hidden md:block md:w-1/4">
-              <h2 className="p-4 bg-purple-200 text-black border-purple-200 rounded border text-xl">Blog</h2>
-              <div className="p-4 border-purple-200 rounded border">
-                <BlogArticleList />
-              </div>
-            </div>
-            <div className="md:w-3/4">
-              <h3 className="p-4 bg-purple-200 text-black border-purple-200 rounded border text-xl">{titleText}</h3>
-              <div className="p-4 border-purple-200 rounded border blogArticle">
-                <p>この記事の初出日: {posting_date}</p>
-                <hr />
-                {RichText.render(text)}
-              </div>
-            </div>
-            <div className="md:hidden p-4 border-purple-200 rounded border">
-              <Link to="/blog">ブログ記事の一覧に戻る</Link>
+        <Box className="divide-y divide-gray-400">
+          <div className="md:flex md:flex-row">
+            <h2 className="text-xl font-orbitron mr-4">
+              <Link to="/blog" className="no-underline"><FontAwesomeIcon icon={faBook}/> Blog</Link>
+            </h2>
+            <div>
+              <h3 className="text-xl font-bold">{titleText}</h3>
+              <p>この記事の初出日: {posting_date}</p>
             </div>
           </div>
+          <div className="blogArticle">
+            {RichText.render(text)}
+          </div>
+        </Box>
+        <Iconbox icon={<FontAwesomeIcon icon={faBook}/>}>
+          <h2 className="text-xl text-bold font-orbitron">More Blog Articles</h2>
+          <BlogArticleList max="3" exclude={_meta.uid} />
+          <p><Link to="/blog">すべての記事を表示する</Link></p>
+        </Iconbox>
+        <CreativeCommons />
       </Layout>
   );
 };

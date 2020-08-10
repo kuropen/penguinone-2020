@@ -2,7 +2,7 @@ import React from "react";
 import {Link, graphql, StaticQuery} from "gatsby";
 import { RichText } from 'prismic-reactjs';
 
-export default ({className, max = 0}) => (
+export default ({className, max = 0, exclude = ''}) => (
   <StaticQuery query={query} render={data => {
       const {prismic} = data;
       const articles = prismic.allBlogs.edges;
@@ -10,6 +10,9 @@ export default ({className, max = 0}) => (
       const listElements = articles.map((article) => {
           const {title, posting_date, _meta} = article.node;
           const id = _meta.uid;
+          if (id === exclude) {
+            return null;
+          }
           shownCount++;
           if (max > 0 && shownCount > max) {
               return null;

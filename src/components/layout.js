@@ -2,8 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import {StaticQuery, graphql, Link} from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouseUser, faHammer } from '@fortawesome/free-solid-svg-icons';
-import Iconbox from "../components/iconbox";
+import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
 
 export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
   <StaticQuery query={query} render={data => {
@@ -55,11 +54,6 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
         </header>
         <div className="divide-y divide-gray-400 p-4 border border-black rounded-b-lg">
           <div>
-            <Iconbox className="border-red-500" icon={<FontAwesomeIcon icon={faHammer} />}>
-              <h2 className="text-xl text-bold font-orbitron">Under Construction</h2>
-              <p>現在<strong>ページレイアウトの大幅見直し</strong>を行っており、<strong>途中経過</strong>が公開されています。<br/>
-                レイアウトが崩れている箇所が一部ある場合がありますが、ご了承ください。</p>
-            </Iconbox>
             {children}
           </div>
           <div className="mx-2 pt-2">

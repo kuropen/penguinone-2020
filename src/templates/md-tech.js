@@ -2,6 +2,12 @@ import React from "react";
 import Layout from "../components/layout";
 import TechArticleList from "../components/tech/techArticleList";
 import {graphql, Link} from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faJournalWhills } from "@fortawesome/free-solid-svg-icons"
+import CreativeCommons from "../components/cc/creativeCommons";
+import Box from "../components/box";
+import Iconbox from "../components/iconbox";
+import QiitaNotice from "../components/tech/qiitaNotice";
 
 export default ({data}) => {
   const articles = data.allMarkdownRemark.nodes;
@@ -19,24 +25,24 @@ export default ({data}) => {
   };
   return (
       <Layout pageTitle={doc.frontmatter.title} ogpInfo={ogpInfo}>
-          <div className="md:flex md:flex-row mb-4">
-            <div className="hidden md:block md:w-1/4">
-              <h2 className="p-4 bg-purple-200 text-black border-purple-200 rounded border text-xl">Tech Articles</h2>
-              <div className="p-4 border-purple-200 rounded border">
-                <TechArticleList articles={articles} />
-              </div>
-            </div>
-            <div className="md:w-3/4">
-              <h3 className="p-4 bg-purple-200 text-black border-purple-200 rounded border text-xl">{doc.frontmatter.title}</h3>
-              <div
-                className="p-4 border-purple-200 rounded border blogArticle"
-                dangerouslySetInnerHTML={{__html: doc.html}}>
-              </div>
-            </div>
-            <div className="md:hidden p-4 border-purple-200 rounded border">
-              <Link to="/tech">技術記事の一覧に戻る</Link>
+        <QiitaNotice />
+        <Box>
+          <div className="md:flex md:flex-row">
+            <h2 className="text-xl font-orbitron mr-4">
+              <Link to="/tech" className="no-underline"><FontAwesomeIcon icon={faJournalWhills}/> Tech Articles</Link>
+            </h2>
+            <div>
+              <h3 className="text-xl font-bold">{doc.frontmatter.title}</h3>
             </div>
           </div>
+          <div className="blogArticle" dangerouslySetInnerHTML={{__html: doc.html}} />
+        </Box>
+        <Iconbox icon={<FontAwesomeIcon icon={faJournalWhills}/>}>
+          <h2 className="text-xl text-bold font-orbitron">Selected Tech Articles</h2>
+          <TechArticleList articles={articles} />
+          <p><Link to="/tech">Read More</Link></p>
+        </Iconbox>
+        <CreativeCommons />
       </Layout>
   );
 };
@@ -56,7 +62,7 @@ export const query = graphql`
       }
       fileAbsolutePath
     }
-    allMarkdownRemark {
+    allMarkdownRemark(limit: 3, filter: {fileAbsolutePath: {regex: "/tech/"}}) {
       nodes {
         id
         frontmatter {

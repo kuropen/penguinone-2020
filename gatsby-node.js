@@ -10,7 +10,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({graphql, actions}) => {
     const {createPage, createRedirect} = actions;
-    createRedirect({ fromPath: '/about', toPath: '/about/en' });
+    createRedirect({fromPath: '/profile', toPath: '/'});
 
     const result = await graphql(`
       query CreatePagesQuery {
