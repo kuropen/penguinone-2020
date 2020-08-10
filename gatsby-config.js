@@ -10,7 +10,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
     {
-      resolve: 'gatsby-source-prismic-graphql',
+      resolve: '@prismicio/gatsby-source-prismic-graphql',
       options: {
         repositoryName: 'penguinone', // (REQUIRED, replace with your own)
         pages: [ // (optional, builds pages dynamically)
@@ -21,6 +21,7 @@ module.exports = {
             component: require.resolve('./src/templates/prismic-blog.js'),
           }
         ],
+        previews: false,
       }
     },
     {

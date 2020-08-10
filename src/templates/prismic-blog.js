@@ -10,11 +10,11 @@ import Iconbox from "../components/iconbox";
 import CreativeCommons from "../components/cc/creativeCommons";
 
 export default ({data}) => {
-  const articles = data.prismic.allBlogs.edges;
-  if (articles.length < 1) {
+  console.log(data);
+  if (!data) {
     return null;
   }
-  const {title, posting_date, text, cover_image, _meta} = articles.pop().node;
+  const {title, posting_date, text, cover_image, _meta} = data.prismic.blog;
   const titleText = RichText.asText(title);
 
   const webRootUrl = data.site.siteMetadata.url;
@@ -54,25 +54,21 @@ export default ({data}) => {
 };
 
 export const query = graphql`
-  query MakePrismicBlogPageQuery ($id: String!) {
+  query MakePrismicBlogPageQuery ($uid: String!) {
     site {
       siteMetadata {
         url
       }
     }
     prismic {
-      allBlogs(id: $id) {
-        edges {
-          node {
-            title
-            posting_date
-            text
-            cover_image
-            _meta {
-              id
-              uid
-            }
-          }
+      blog(uid: $uid, lang:"ja-jp") {
+        title
+        posting_date
+        text
+        cover_image
+        _meta {
+          id
+          uid
         }
       }
     }
