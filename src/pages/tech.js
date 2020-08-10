@@ -5,7 +5,7 @@ import {graphql} from "gatsby";
 import Iconbox from "../components/iconbox";
 import CreativeCommons from "../components/cc/creativeCommons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faJournalWhills, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { faJournalWhills } from "@fortawesome/free-solid-svg-icons";
 import QiitaNotice from "../components/tech/qiitaNotice";
 
 export default ({data}) => {
