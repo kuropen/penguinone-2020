@@ -47,9 +47,6 @@ exports.createPages = async ({graphql, actions}) => {
         if (category === 'tech') {
             template = './src/templates/md-tech.js';
         }
-        if (category === 'about') {
-          template = './src/templates/md-about.js';
-        }
         createPage({
             path: `/${pagePath}`,
             component: path.resolve(template),
