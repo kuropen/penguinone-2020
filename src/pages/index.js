@@ -99,7 +99,7 @@ export default ({data}) => {
               アマビエもいいけど赤べこも。
               福島県会津地方に伝わる神聖な赤い牛を模した張り子人形・「赤べこ」は、
               天然痘の感染から子供を守ったという言い伝えがあるなど、感染防止のお守りとしても知られています。<br/>
-              <a href="https://akabe.co/" target="_blank" rel="noopener noreferrer">
+              <a href="https://akabe.co/">
                 赤べこからパワーを
               </a>
             </p>

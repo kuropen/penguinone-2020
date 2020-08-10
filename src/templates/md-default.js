@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
+import Box from "../components/box";
 import {graphql} from "gatsby";
 
 export default ({data}) => {
@@ -9,11 +10,10 @@ export default ({data}) => {
     }
     return (
         <Layout pageTitle={doc.frontmatter.title}>
-            <h2 className="p-4 bg-gray-100 text-black border-gray-100 rounded border text-xl">{doc.frontmatter.title}</h2>
-            <div
-                className="mb-4 p-4 border-gray-100 rounded border blogArticle"
-                dangerouslySetInnerHTML={{__html: doc.html}}>
-            </div>
+          <Box>
+            <h2 className="text-xl font-bold">{doc.frontmatter.title}</h2>
+            <div className="blogArticle" dangerouslySetInnerHTML={{__html: doc.html}} />
+          </Box>
         </Layout>
     );
 };
