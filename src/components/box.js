@@ -6,8 +6,10 @@ export default ({children, className}) => {
     'border',
     'rounded-lg',
     'shadow-lg',
-    'm-3',
-    'p-3',
+    'm-2',
+    'p-2',
+    'md:m-3',
+    'md:p-3',
   ];
   const extraClasses = (!className || Array.isArray(className)) ? className : className.split(' ');
 

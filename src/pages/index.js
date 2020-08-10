@@ -37,7 +37,7 @@ export default ({data}) => {
           <Iconbox className="border-indigo-800"
             icon={
             <img src="/siteImages/penguin.png" className={
-              classNames("h-16 rounded-full min-w-full", (mapView !== '' ? 'hidden md:block' : ''))
+              classNames("h-10 md:h-16 rounded-full min-w-full", (mapView !== '' ? 'hidden md:block' : ''))
             } alt="" />
             }>
             <h2 className="text-xl text-bold font-orbitron">Who is Kuropen?</h2>
@@ -93,7 +93,7 @@ export default ({data}) => {
             <p><Link to="/tech">Read More</Link></p>
           </Iconbox>
 
-          <Iconbox className="border-red-700" icon={<img src={BekoImage} className="h-16 rounded-full" alt="" />}>
+          <Iconbox className="border-red-700" icon={<img src={BekoImage} className="h-10 md:h-16 rounded-full" alt="" />}>
             <h2 className="text-xl text-bold font-orbitron">Gain the Power from Akabeko</h2>
             <p>
               アマビエもいいけど赤べこも。
