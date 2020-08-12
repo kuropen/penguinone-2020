@@ -16,7 +16,7 @@ export default ({data}) => {
     const socialAccounts = data.prismic.allSocial_accountss.edges;
     return (
         <Layout pageTitle="Social Network Policy">
-          <IconBox className="border-yellow-600" icon={<FontAwesomeIcon icon={faExclamationCircle} />}>
+          <IconBox className="border-yellow-600" icon={<FontAwesomeIcon icon={faExclamationCircle} />} spNoIcon={true}>
             <div className="divide-y divide-gray-400">
               <div className="pb-2">
                 <h2 className="text-xl font-orbitron">Social Network Policy</h2>
