@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import Iconbox from "../components/iconbox";
 import CreativeCommons from "../components/cc/creativeCommons";
+import PrismicLink from "../components/prismicLink";
 
 export default ({data}) => {
   console.log(data);
@@ -40,7 +41,7 @@ export default ({data}) => {
             </div>
           </div>
           <div className="blogArticle">
-            {RichText.render(text)}
+            <RichText render={text} serializeHyperlink={PrismicLink} />
           </div>
         </Box>
         <Iconbox icon={<FontAwesomeIcon icon={faBook}/>}>
