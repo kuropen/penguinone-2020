@@ -8,10 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import Iconbox from "../components/iconbox";
 import CreativeCommons from "../components/cc/creativeCommons";
-import PrismicLink from "../components/prismicLink";
+import PrismicHtmlSerializer from "../utilities/PrismicHtmlSerializer";
 
 export default ({data}) => {
-  console.log(data);
   if (!data) {
     return null;
   }
@@ -41,7 +40,7 @@ export default ({data}) => {
             </div>
           </div>
           <div className="blogArticle">
-            <RichText render={text} serializeHyperlink={PrismicLink} />
+            <RichText render={text} htmlSerializer={PrismicHtmlSerializer} />
           </div>
         </Box>
         <Iconbox icon={<FontAwesomeIcon icon={faBook}/>}>
