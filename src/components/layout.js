@@ -56,10 +56,11 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
           <div>
             {children}
           </div>
-          <div className="mx-2 pt-2">
+          <div className="mx-2 pt-2 md:flex md:flex-row">
             <address>
               <span>Copyright (C) Kuropen.</span>
             </address>
+            <Link to="/about" className="underline md:ml-2">このサイトについて</Link>
           </div>
         </div>
       </div>
