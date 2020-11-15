@@ -15,6 +15,12 @@ export default () => {
         </a>
         を厳守し、一人でも多くの人を守ろう。
       </p>
+      <p>
+        Kuropenは新型コロナウイルス早期終息に協力するため、 
+        <a href="https://foldingathome.org/" target="_blank" rel="noopener noreferrer">Folding@home</a>
+        プロジェクトに
+        <a href="https://stats.foldingathome.org/donor/Kuropen" target="_blank" rel="noopener noreferrer">協力しています</a>。
+      </p>
     </Iconbox>
   );
 }
