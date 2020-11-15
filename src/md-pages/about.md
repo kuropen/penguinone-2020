@@ -34,10 +34,8 @@ CCライセンスが適用されないページに関して、Kuropenの許可�
 なお、表示確認済環境であるか否かに関わらず、正常な表示・動作の保証は一切しておりません。
 
 - Windows 10 が動作する 画面解像度 1920 x 1080 のPC上の Microsoft Edge (Chromiumベース)
-- Android 10 が動作する Galaxy S9 (au SCV38) 上の
-  - [Samsung Internet Browser](https://www.galaxymobile.jp/apps/internet/)
-  - Google Chrome
-- iPad OS 13 が動作する iPad mini 第5世代上の Safari
+- Android 10 が動作する Galaxy S20+ (au SCG02) 上の Microsoft Edge
+- iPad OS 14 が動作する iPad mini 第5世代上の Safari
 
 ### 内容にお気づきの点があった場合
 このサイトの内容に関してお気づきの点は、[GitHubのissues](https://github.com/kuropen/penguinone-2020/issues)まで、
