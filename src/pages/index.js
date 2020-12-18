@@ -10,7 +10,6 @@ import BekoImage from "../images/beko.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUserCircle,
-  faIdCard,
   faIdCardAlt,
   faMapMarkedAlt,
   faWindowClose,
