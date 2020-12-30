@@ -9,7 +9,7 @@ import CreativeCommons from "../components/cc/creativeCommons";
 export default () => {
     return (
         <Layout pageTitle="Blog">
-          <Iconbox className="border-indigo-800" icon={<FontAwesomeIcon icon={faBook}/>}>
+          <Iconbox className="kpBlogIndexBorder" icon={<FontAwesomeIcon icon={faBook}/>}>
             <h2 className="text-xl text-bold font-orbitron">Blog Articles</h2>
             <BlogArticleList />
           </Iconbox>

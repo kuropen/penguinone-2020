@@ -19,6 +19,33 @@ body {
     @apply text-black;
 }
 
+.kpBlogIndexBorder {
+    @apply border-blue-800;
+}
+
+.kpNavLinkBorder {
+    @apply border-indigo-900;
+}
+
+@media (prefers-color-scheme: dark) {
+    .kp-main {
+        @apply bg-gray-800;
+        @apply text-gray-100;
+    }
+    
+    .kp-main :any-link {
+        @apply text-gray-100;
+    }
+
+    .kpBlogIndexBorder {
+        @apply border-blue-300;
+    }
+
+    .kpNavLinkBorder {
+        @apply border-indigo-300;
+    }
+}
+
 .kp-main a:not(.no-underline) {
     text-decoration: underline;
 }

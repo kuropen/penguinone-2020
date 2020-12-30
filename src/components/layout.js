@@ -4,6 +4,7 @@ import {StaticQuery, graphql, Link} from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseUser, faBook, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTwitterSquare, faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
+import NavLinkBox from "./navLinkBox";
 
 const classnames = require('classnames');
 
@@ -55,21 +56,11 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
         <div className="kp-main p-4 border border-black rounded mb-4 2xl:mx-4 kp-gradientBorder2 md:flex md:flex-row">
           <div className={classnames("m-4 md:flex-none", hideHomeBtn ? null : "hidden md:block")}>
             <div className="grid md:inline-grid md:grid-cols-1 md:grid-rows-none gap-1">
-              <Link to="/blog" className="no-underline p-4 border border-black rounded text-lg">
-              <FontAwesomeIcon icon={faBook} className="text-2xl" /> Blog
-              </Link>
-              <a href="https://twitter.com/kuropen_aizu" className="no-underline p-4 border border-black rounded text-lg">
-              <FontAwesomeIcon icon={faTwitterSquare} className="text-2xl" /> Twitter
-              </a>
-              <a href="https://www.facebook.com/yuda.hirochika" className="no-underline p-4 border border-black rounded text-lg">
-              <FontAwesomeIcon icon={faFacebookSquare} className="text-2xl" /> Facebook
-              </a>
-              <a href="https://instagram.com/kuropen" className="no-underline p-4 border border-black rounded text-lg">
-              <FontAwesomeIcon icon={faInstagramSquare} className="text-2xl" /> Instagram
-              </a>
-              <Link to="/social" className="no-underline p-4 border border-black rounded text-lg">
-              <FontAwesomeIcon icon={faExclamationCircle} className="text-2xl" /> SNS Policy
-              </Link>
+              <NavLinkBox href="/blog" type="Link" icon={faBook} text="Blog" />
+              <NavLinkBox href="https://twitter.com/kuropen_aizu" type="a" icon={faTwitterSquare} text="Twitter" />
+              <NavLinkBox href="https://www.facebook.com/yuda.hirochika" type="a" icon={faFacebookSquare} text="Facebook" />
+              <NavLinkBox href="https://instagram.com/kuropen" type="a" icon={faInstagramSquare} text="Instagram" />
+              <NavLinkBox href="/social" type="Link" icon={faExclamationCircle} text="SNS Policy" />
             </div>
           </div>
           <div className="md:flex-1">
