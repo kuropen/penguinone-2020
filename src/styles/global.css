@@ -30,6 +30,7 @@ body {
 pre {
     @apply text-green-700;
     white-space: pre-wrap;
+    @apply break-all;
 }
 
 @media (prefers-color-scheme: dark) {
