@@ -27,6 +27,12 @@ body {
     @apply border-indigo-900;
 }
 
+pre {
+    @apply text-green-700;
+    white-space: pre-wrap;
+    @apply break-all;
+}
+
 @media (prefers-color-scheme: dark) {
     .kp-main {
         @apply bg-gray-800;
@@ -43,6 +49,10 @@ body {
 
     .kpNavLinkBorder {
         @apply border-indigo-300;
+    }
+
+    pre {
+        @apply text-green-300;
     }
 }
 
@@ -97,11 +107,6 @@ p {
     @apply mb-2;
 }
 
-pre {
-    @apply text-green-700;
-    white-space: pre-wrap;
-}
-
 td {
     word-break: break-all;
 }
@@ -124,10 +129,6 @@ td {
     .blogArticle img {
         max-width: 480px;
         max-height: 320px;
-    }
-    pre {
-        white-space: pre;
-        overflow-x: auto;
     }
 }
 
