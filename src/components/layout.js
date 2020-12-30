@@ -2,7 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import {StaticQuery, graphql, Link} from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouseUser } from '@fortawesome/free-solid-svg-icons';
+import { faHouseUser, faBook, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { faTwitterSquare, faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
+import NavLinkBox from "./navLinkBox";
+
+const classnames = require('classnames');
 
 export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
   <StaticQuery query={query} render={data => {
@@ -23,17 +27,14 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
 
     // This is special version, normally the icon is faHome
     let homeBtn = (
-      <Link to="/" className="bg-white text-black p-2 border-white border rounded" title="Stay home, Save lives!">
-        <span className="sr-only">Go to Top Page / トップページへ戻る</span>
+      <Link to="/">
         <FontAwesomeIcon icon={faHouseUser} />
+        <span className="text-sm"> Home</span>
       </Link>
     );
     if (hideHomeBtn) {
-      // This is special version, normally hidden using React.Fragment
       homeBtn = (
-        <div title="Stay home, Save lives!" className="p-2 border-white border rounded">
-          <FontAwesomeIcon icon={faHouseUser} />
-        </div>
+        <React.Fragment />
       );
     }
     let fullTitle = title;
@@ -46,22 +47,31 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
           <link rel="shortcut icon" type="image/png" href={image} />
           {ogpTags}
         </Helmet>
-        <header className="bg-black text-gray-200 flex flex-row items-center py-4 kp-gradientBorder1">
+        <header className="flex flex-row items-center pt-4 mx-2 2xl:mx-4">
           <h1 className="font-orbitron text-2xl flex-grow ml-2">{title}</h1>
           <div className="mx-2 text-2xl justify-end">
             {homeBtn}
           </div>
         </header>
-        <div className="divide-y divide-gray-400 p-4 border border-black rounded-b-lg">
-          <div>
+        <div className="kp-main p-4 border border-black rounded mb-4 2xl:mx-4 kp-gradientBorder2 md:flex md:flex-row">
+          <div className={classnames("m-4 md:flex-none", hideHomeBtn ? null : "hidden md:block")}>
+            <div className="grid md:inline-grid md:grid-cols-1 md:grid-rows-none gap-1">
+              <NavLinkBox href="/blog" type="Link" icon={faBook} text="Blog" />
+              <NavLinkBox href="https://twitter.com/kuropen_aizu" type="a" icon={faTwitterSquare} text="Twitter" />
+              <NavLinkBox href="https://www.facebook.com/yuda.hirochika" type="a" icon={faFacebookSquare} text="Facebook" />
+              <NavLinkBox href="https://instagram.com/kuropen" type="a" icon={faInstagramSquare} text="Instagram" />
+              <NavLinkBox href="/social" type="Link" icon={faExclamationCircle} text="SNS Policy" />
+            </div>
+          </div>
+          <div className="md:flex-1">
             {children}
           </div>
-          <div className="mx-2 pt-2 md:flex md:flex-row">
-            <address>
-              <span>Copyright (C) Kuropen.</span>
-            </address>
-            <Link to="/about" className="underline md:ml-2">このサイトについて</Link>
-          </div>
+        </div>
+        <div className="mx-2 mb-2 2xl:mx-4 md:flex md:flex-row">
+          <address>
+            <span>Copyright (C) Kuropen.</span>
+          </address>
+          <Link to="/about" className="underline md:ml-2">このサイトについて</Link>
         </div>
       </div>
     );

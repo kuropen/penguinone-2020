@@ -32,6 +32,8 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    // `gatsby-transformer-sharp`,
+    // `gatsby-plugin-sharp`,
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-netlify',
   ],
@@ -40,8 +42,5 @@ module.exports = {
     titleTemplate: "%s - Penguinone",
     url: "https://penguinone.kuropen.org",
     image: "/siteImages/penguin.png",
-    twitterUserName: "kuropen_aizu",
-    fbUserName: "yuda.hirochika",
-    activityPubUrl: "https://kuropen.me/@krpn",
   },
 }

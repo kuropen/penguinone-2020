@@ -6,7 +6,50 @@
 
 body {
     font-family: 'Segoe UI', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', 'MS PGothic', sans-serif;
+    @apply bg-gray-800;
+    @apply text-gray-50;
 }
+
+.kp-main {
+    @apply bg-white;
+    @apply text-black;
+}
+
+.kp-main :any-link {
+    @apply text-black;
+}
+
+.kpBlogIndexBorder {
+    @apply border-blue-800;
+}
+
+.kpNavLinkBorder {
+    @apply border-indigo-900;
+}
+
+@media (prefers-color-scheme: dark) {
+    .kp-main {
+        @apply bg-gray-800;
+        @apply text-gray-100;
+    }
+    
+    .kp-main :any-link {
+        @apply text-gray-100;
+    }
+
+    .kpBlogIndexBorder {
+        @apply border-blue-300;
+    }
+
+    .kpNavLinkBorder {
+        @apply border-indigo-300;
+    }
+}
+
+.kp-main a:not(.no-underline) {
+    text-decoration: underline;
+}
+
 .font-orbitron {
     @apply font-bold; /* because the included Orbitron is bold */
     font-family: 'Orbitron', sans-serif;
@@ -32,10 +75,6 @@ address svg {
 
 address span {
     white-space: nowrap;
-}
-
-a {
-    text-decoration: underline;
 }
 
 address a {
@@ -98,5 +137,7 @@ td {
     border-image-slice: 1;
 }
 
-
+.kp-gradientBorder2 {
+    box-shadow: 3px 3px 5px 0 #666666, inset 0 0 10px 3px #119988;
+}
 
