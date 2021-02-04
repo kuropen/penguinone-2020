@@ -36,6 +36,14 @@ module.exports = {
     // `gatsby-plugin-sharp`,
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+          bucketName: 'penguinone-kuropen-org',
+          protocol: 'https',
+          hostname: 'penguinone.kuropen.org',
+      },
+    },
   ],
   siteMetadata: {
     title: "Penguinone",
