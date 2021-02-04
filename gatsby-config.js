@@ -42,6 +42,7 @@ module.exports = {
           bucketName: 'penguinone-kuropen-org',
           protocol: 'https',
           hostname: 'penguinone.kuropen.org',
+          region: 'ap-northeast-1',
       },
     },
   ],
