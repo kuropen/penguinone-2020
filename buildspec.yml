@@ -4,12 +4,12 @@ phases:
   install:
     runtime-versions:
       nodejs: 14
-    pre_build:
-      commands:
-        - npm install
-    build:
-      commands:
-        - npm run build
-    post_build:
-      commands:
-        - npm run deploy
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - npm run deploy
