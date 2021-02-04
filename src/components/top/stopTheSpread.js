@@ -19,10 +19,7 @@ export default () => {
         Kuropenは新型コロナウイルス早期終息に協力するため、 
         <a href="https://foldingathome.org/" target="_blank" rel="noopener noreferrer">Folding@home</a>
         プロジェクトに
-        <a href="https://stats.foldingathome.org/donor/Kuropen" target="_blank" rel="noopener noreferrer">協力しています</a>。<br />
-        ※2021年1月11日現在、
-        <a href="https://www.tepco.co.jp/pg/company/press-information/press/2021/1569577_8616.html" target="_blank" rel="noopener noreferrer">全国的な電力需給逼迫</a>
-        の影響で、平日の稼働を制限しています。
+        <a href="https://stats.foldingathome.org/donor/Kuropen" target="_blank" rel="noopener noreferrer">協力しています</a>。
       </p>
     </Iconbox>
   );
