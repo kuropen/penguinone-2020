@@ -10,7 +10,7 @@ const PrismicHtmlSerializer = (type, element, content, children, key) => {
       const optimizedSrc = `${imageBaseUrl}&w=480&h=320`;
       const alt = element.alt || '';
       return (
-        <a href={imageBaseUrl}>
+        <a href={imageBaseUrl} className="inline-block">
           <img src={optimizedSrc} alt={alt} key={key} />
         </a>
       );
