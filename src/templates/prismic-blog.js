@@ -9,6 +9,7 @@ import { faBook } from "@fortawesome/free-solid-svg-icons";
 import Iconbox from "../components/iconbox";
 import CreativeCommons from "../components/cc/creativeCommons";
 import PrismicHtmlSerializer from "../utilities/PrismicHtmlSerializer";
+import { SRLWrapper } from 'simple-react-lightbox';
 
 export default ({data}) => {
   if (!data) {
@@ -40,7 +41,9 @@ export default ({data}) => {
             </div>
           </div>
           <div className="blogArticle">
-            <RichText render={text} htmlSerializer={PrismicHtmlSerializer} />
+            <SRLWrapper>
+              <RichText render={text} htmlSerializer={PrismicHtmlSerializer} />
+            </SRLWrapper>
           </div>
         </Box>
         <Iconbox icon={<FontAwesomeIcon icon={faBook}/>}>
