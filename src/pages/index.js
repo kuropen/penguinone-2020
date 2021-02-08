@@ -7,8 +7,8 @@ import NoImage from "../images/Penguinote_NoImage.png";
 import { graphql, Link } from "gatsby";
 import Box from "../components/box";
 import { RichText } from 'prismic-reactjs';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import NavLinkBox from "../components/navLinkBox";
 
 const classNames = require('classnames');
 
@@ -16,6 +16,7 @@ const SHOWN_ENTRY_NUMBER_AT_ONCE = 6;
 
 export default ({data}) => {
   const [shownEntryNumber, changeEntryNumber] = useState(SHOWN_ENTRY_NUMBER_AT_ONCE);
+  const [noticeShownMobile, showNoticeOnMobile] = useState(false);
 
   // Build articles data shown in top page
   let viewData = [];
@@ -69,19 +70,23 @@ export default ({data}) => {
 
   return (
     <Layout hideHomeBtn={true}>
-      <StopTheSpread />
-      <Iconbox className="border-red-700" icon={<img src={BekoImage} className="h-10 md:h-16 rounded-full" alt="" />}>
-        <h2 className="text-xl text-bold font-orbitron">Gain the Power from Akabeko</h2>
-        <p>
-          アマビエもいいけど赤べこも。
-          福島県会津地方に伝わる神聖な赤い牛を模した張り子人形・「赤べこ」は、
-          天然痘の感染から子供を守ったという言い伝えがあるなど、感染防止のお守りとしても知られています。<br/>
-          <a href="https://akabe.co/">
-            赤べこからパワーを
-          </a>
-        </p>
-      </Iconbox>
-      <h2 className="text-2xl text-bold font-orbitron ml-3"><FontAwesomeIcon icon={faBook} /> Blog Articles</h2>
+      <div className={classNames((noticeShownMobile ? 'hidden' : ''), 'md:hidden')}>
+        <NavLinkBox type="button" icon={faInfoCircle} text="お知らせを表示" onClick={() => showNoticeOnMobile(true)} />
+      </div>
+      <div className={classNames((!noticeShownMobile ? 'hidden' : ''), 'md:block')}>
+        <StopTheSpread />
+        <Iconbox className="border-red-700" icon={<img src={BekoImage} className="h-10 md:h-16 rounded-full" alt="" />}>
+          <h2 className="text-xl text-bold font-orbitron">Gain the Power from Akabeko</h2>
+          <p>
+            アマビエもいいけど赤べこも。
+            福島県会津地方に伝わる神聖な赤い牛を模した張り子人形・「赤べこ」は、
+            天然痘の感染から子供を守ったという言い伝えがあるなど、感染防止のお守りとしても知られています。<br/>
+            <a href="https://akabe.co/">
+              赤べこからパワーを
+            </a>
+          </p>
+        </Iconbox>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3">
         {viewData.slice(0, shownEntryNumber)}
       </div>

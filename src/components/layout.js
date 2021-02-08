@@ -6,8 +6,6 @@ import { faHouseUser, faExclamationCircle } from '@fortawesome/free-solid-svg-ic
 import { faTwitterSquare, faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
 import NavLinkBox from "./navLinkBox";
 
-const classnames = require('classnames');
-
 export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
   <StaticQuery query={query} render={data => {
     const {site} = data;
@@ -54,7 +52,7 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
           </div>
         </header>
         <div className="kp-main p-4 border border-black rounded mb-4 2xl:mx-4 kp-gradientBorder2 md:flex md:flex-row">
-          <div className={classnames("m-4 md:flex-none", hideHomeBtn ? null : "hidden md:block")}>
+          <div className="m-4 md:flex-none hidden md:block">
             <div className="grid md:inline-grid md:grid-cols-1 md:grid-rows-none gap-1">
               <NavLinkBox href="https://twitter.com/kuropen_aizu" type="a" icon={faTwitterSquare} text="Twitter" />
               <NavLinkBox href="https://www.facebook.com/yuda.hirochika" type="a" icon={faFacebookSquare} text="Facebook" />
