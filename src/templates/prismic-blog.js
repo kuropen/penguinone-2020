@@ -33,7 +33,7 @@ export default ({data}) => {
         <Box className="divide-y divide-gray-400">
           <div className="md:flex md:flex-row">
             <h2 className="text-xl font-orbitron mr-4">
-              <Link to="/blog" className="no-underline"><FontAwesomeIcon icon={faBook}/> Blog</Link>
+              <Link to="/" className="no-underline"><FontAwesomeIcon icon={faBook}/> Blog</Link>
             </h2>
             <div>
               <h3 className="text-xl font-bold">{titleText}</h3>

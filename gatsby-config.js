@@ -31,9 +31,14 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://zenn.dev/kuropen/feed`,
+        name: `Zenn`,
+      }
+    },
     `gatsby-transformer-remark`,
-    // `gatsby-transformer-sharp`,
-    // `gatsby-plugin-sharp`,
     'gatsby-plugin-fontawesome-css',
     {
       resolve: `gatsby-plugin-s3`,

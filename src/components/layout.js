@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import {StaticQuery, graphql, Link} from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouseUser, faBook, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHouseUser, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTwitterSquare, faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
 import NavLinkBox from "./navLinkBox";
 
@@ -56,7 +56,6 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
         <div className="kp-main p-4 border border-black rounded mb-4 2xl:mx-4 kp-gradientBorder2 md:flex md:flex-row">
           <div className={classnames("m-4 md:flex-none", hideHomeBtn ? null : "hidden md:block")}>
             <div className="grid md:inline-grid md:grid-cols-1 md:grid-rows-none gap-1">
-              <NavLinkBox href="/blog" type="Link" icon={faBook} text="Blog" />
               <NavLinkBox href="https://twitter.com/kuropen_aizu" type="a" icon={faTwitterSquare} text="Twitter" />
               <NavLinkBox href="https://www.facebook.com/yuda.hirochika" type="a" icon={faFacebookSquare} text="Facebook" />
               <NavLinkBox href="https://instagram.com/kuropen" type="a" icon={faInstagramSquare} text="Instagram" />
