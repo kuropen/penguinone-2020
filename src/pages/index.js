@@ -41,7 +41,7 @@ export default ({data}) => {
   data.prismic.allBlogs.edges.forEach(({node}) => {
     let image = NoImage;
     if (node.cover_image) {
-      image = node.cover_image.url;
+      image = `${node.cover_image.url}&fit=crop&w=1200&h=630&crop=entropy`;
     }
     viewData.push({
       date: node.posting_date,
