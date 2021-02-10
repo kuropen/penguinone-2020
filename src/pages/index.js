@@ -11,6 +11,7 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import NavLinkBox from "../components/navLinkBox";
 
 const classNames = require('classnames');
+const {sprintf} = require('sprintf-js');
 
 const SHOWN_ENTRY_NUMBER_AT_ONCE = 6;
 
@@ -22,8 +23,8 @@ export default ({data}) => {
   let viewData = [];
   // First, process for Zenn feed.
   data.allFeedZenn.nodes.forEach(element => {
-    const dateTime = element.isoDate;
-    const date = dateTime.substr(0, dateTime.indexOf('T'));
+    const dateTime = new Date(element.isoDate);
+    const date = sprintf('%d-%02d-%02d', dateTime.getFullYear(), dateTime.getMonth() + 1, dateTime.getDate());
     viewData.push({
       date: date,
       reactObject: (
