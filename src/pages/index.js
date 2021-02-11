@@ -7,7 +7,7 @@ import NoImage from "../images/Penguinote_NoImage.png";
 import { graphql, Link } from "gatsby";
 import Box from "../components/box";
 import { RichText } from 'prismic-reactjs';
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { faInfoCircle, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import NavLinkBox from "../components/navLinkBox";
 
 const classNames = require('classnames');
@@ -72,6 +72,7 @@ export default ({data}) => {
   return (
     <Layout hideHomeBtn={true}>
       <div className={classNames((noticeShownMobile ? 'hidden' : ''), 'md:hidden')}>
+        <NavLinkBox type="Link" icon={faAddressCard} text="運営者プロフィールへ" href="/about_me" />
         <NavLinkBox type="button" icon={faInfoCircle} text="お知らせを表示" onClick={() => showNoticeOnMobile(true)} />
       </div>
       <div className={classNames((!noticeShownMobile ? 'hidden' : ''), 'md:block')}>
