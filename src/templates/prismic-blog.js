@@ -7,7 +7,7 @@ import Box from "../components/box";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import Iconbox from "../components/iconbox";
-import CreativeCommons from "../components/cc/creativeCommons";
+import ContentLicense from "../components/blog/contentLicense";
 import PrismicHtmlSerializer from "../utilities/PrismicHtmlSerializer";
 import { SRLWrapper } from 'simple-react-lightbox';
 
@@ -15,7 +15,7 @@ export default ({data}) => {
   if (!data) {
     return null;
   }
-  const {title, posting_date, text, cover_image, _meta} = data.prismic.blog;
+  const {title, posting_date, text, cover_image, content_license, _meta} = data.prismic.blog;
   const titleText = RichText.asText(title);
 
   const webRootUrl = data.site.siteMetadata.url;
@@ -51,7 +51,7 @@ export default ({data}) => {
           <BlogArticleList max="3" exclude={_meta.uid} />
           <p><Link to="/blog">すべての記事を表示する</Link></p>
         </Iconbox>
-        <CreativeCommons />
+        <ContentLicense nonFree={content_license} />
       </Layout>
   );
 };
@@ -73,6 +73,7 @@ export const query = graphql`
           id
           uid
         }
+        content_license
       }
     }
   }
