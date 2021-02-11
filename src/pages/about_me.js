@@ -48,7 +48,7 @@ export default ({data}) => {
                     <dt className="md:float-left font-bold mr-2"><FontAwesomeIcon icon={faFacebookSquare} /> Facebook</dt>
                     <dd><a href="https://facebook.com/yuda.hirochika" target="_blank" rel="noopener noreferrer">Facebookアカウントはこちら</a></dd>
                     <dt className="md:float-left font-bold mr-2"><FontAwesomeIcon icon={faInstagramSquare} /> Instagram</dt>
-                    <dd><a href="https://instagram.com/kuropen" target="_blank" rel="noopener noreferrer">faInstagramSquare</a></dd>
+                    <dd><a href="https://instagram.com/kuropen" target="_blank" rel="noopener noreferrer">kuropen</a></dd>
                     <dt className="md:float-left font-bold mr-2"><FontAwesomeIcon icon={faCommentAlt} /> ActivityPub</dt>
                     <dd><a href="https://kuropen.me/@krpn" target="_blank" rel="noopener noreferrer">@krpn@kuropen.me</a><br />
                     <Link to="/activitypub">ActivityPubの詳細</Link></dd>
