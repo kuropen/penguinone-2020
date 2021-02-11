@@ -3,7 +3,7 @@
   "private": true,
   "description": "kuropen.org Website",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "CC-BY-NC-SA-4.0",
   "scripts": {
     "dev": "npm run develop",
     "build": "gatsby build",

@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitterSquare, faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
 import PenguinImage from "../images/penguin.png";
+import CreativeCommons from "../components/cc/creativeCommons";
 
 export default ({data}) => {
     const doc = data.prismic.allAbout_mes.edges.slice(0, 1).pop();
@@ -69,6 +70,7 @@ export default ({data}) => {
               </div>
             </div>
           </IconBox>
+          <CreativeCommons />
         </Layout>
     );
 };

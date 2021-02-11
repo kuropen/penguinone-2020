@@ -4,6 +4,6 @@ This is the repository for 2020 version of Penguinone, Kuropen's Website.
 
 ## About license
 
-The JavaScript code of this repository is licensed under MIT License.
+Beginning from February 11, 2021, whole this repository is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 
-However, the contents of the Markdown documents in this repository are licensed under CC-BY-NC 4.0 License.
+This is because it seems to be hard to distinguish between the content and the logic on some files in this repository.
