@@ -33,9 +33,11 @@ CCライセンスが適用されないページに関して、Kuropenの許可�
 このサイトおよび関連するサイトは、下記の環境で表示確認を行っております。
 なお、表示確認済環境であるか否かに関わらず、正常な表示・動作の保証は一切しておりません。
 
-- Windows 10 が動作する 画面解像度 1920 x 1080 のPC上の Microsoft Edge (Chromiumベース)
-- Android 10 が動作する Galaxy S20+ (au SCG02) 上の Microsoft Edge
+- Windows 10 が動作する 画面解像度 1920 x 1080 のディスプレイ2面を備えたPC上の Firefox
+- Android 10 が動作する Galaxy S20+ (au SCG02) 上の Firefox
 - iPad OS 14 が動作する iPad mini 第5世代上の Safari
+
+※上記以外のブラウザでも不定期に確認は行っていますが、頻度は落ちます。なお、[**当分の間、Windows PCのChrome, Edgeでの動作確認は実施致しません**。](/blog/210211_display_driver_error)
 
 ### 内容にお気づきの点があった場合
 このサイトの内容に関してお気づきの点は、[GitHubのissues](https://github.com/kuropen/penguinone-2020/issues)まで、
