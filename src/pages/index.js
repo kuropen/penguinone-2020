@@ -28,7 +28,7 @@ export default ({data}) => {
     viewData.push({
       date: date,
       reactObject: (
-        <Box>
+        <Box key={element.link}>
           <a href={element.link} target="_blank" rel="noopener noreferrer" className="block no-underline">
             <div><img src={element.enclosure.url} alt="" /></div>
             <div className="text-lg">{element.title}</div>
@@ -47,7 +47,7 @@ export default ({data}) => {
     viewData.push({
       date: node.posting_date,
       reactObject: (
-        <Box>
+        <Box key={node._meta.id}>
           <Link to={`/blog/${node._meta.uid}`} className="block no-underline">
             <div><img src={image} alt="" /></div>
             <div className="text-lg">{RichText.asText(node.title)}</div>

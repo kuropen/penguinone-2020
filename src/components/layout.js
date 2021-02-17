@@ -41,7 +41,7 @@ export default ({ children, hideHomeBtn, pageTitle, ogpInfo }) => (
     }
     return (
       <div className="container mx-auto">
-        <Helmet title={fullTitle}>
+        <Helmet title={fullTitle} htmlAttributes={{lang: 'ja'}}>
           <link rel="shortcut icon" type="image/png" href={image} />
           {ogpTags}
         </Helmet>
