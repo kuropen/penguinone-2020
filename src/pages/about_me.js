@@ -22,7 +22,7 @@ export default ({data}) => {
     if (!doc) {
         return null;
     }
-    const {text} = doc.node;
+    const {alma_mater, location, name, occupation, text} = doc.node;
     return (
         <Layout pageTitle="Profile">
           <IconBox className="border-indigo-800" icon={<img src={PenguinImage} className="h-10 md:h-16 rounded-full" alt="" />} spNoIcon={true}>
@@ -33,15 +33,15 @@ export default ({data}) => {
               <div className="pt-2 pb-2">
                 <dl>
                   <dt className="md:float-left font-bold mr-2"><FontAwesomeIcon icon={faUserCircle} /> ハンドルネーム</dt>
-                  <dd>Kuropen</dd>
+                  <dd>{name}</dd>
                   <dt className="clear-left md:float-left font-bold mr-2"><FontAwesomeIcon icon={faIdCardAlt} /> 職業</dt>
-                  <dd>Web開発者（PHP, JavaScript担当）</dd>
+                  <dd>{occupation}</dd>
                   <dt className="clear-left md:float-left font-bold mr-2"><FontAwesomeIcon icon={faMapMarkedAlt} /> 主な拠点</dt>
                   <dd>
-                    埼玉県さいたま市中央区（与野本町・北与野）、福島県会津若松市
+                    {RichText.asText(location)}
                   </dd>
                   <dt className="md:float-left font-bold mr-2"><FontAwesomeIcon icon={faUniversity} /> 出身校</dt>
-                  <dd>会津大学コンピュータ理工学部</dd>
+                  <dd>{alma_mater}</dd>
                   <div className="md:hidden">
                     {/* SNS accounts: not shown on PCs and tablets because they always have accounts list shown on the left */}
                     <dt className="md:float-left font-bold mr-2"><FontAwesomeIcon icon={faTwitterSquare} /> Twitter</dt>
@@ -81,6 +81,10 @@ export const query = graphql`
       allAbout_mes {
         edges {
           node {
+            alma_mater
+            location
+            name
+            occupation
             text
           }
         }
